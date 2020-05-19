@@ -1,8 +1,224 @@
-.test{
-    background-color: $btn--color-primary_1;
-    color: $font--color-primary_1;
-    &:hover{
-        background-color: $btn--color-primary_1--hover;
-        cursor: pointer;
+.choice_of_housing{
+    margin-top: 100px;
+    text-align: center;
+        h1{
+            color: #4c4450;
+            font-size: 45px;
+        }
+        span{
+            color: #face34;
+        }
+        p{
+            line-height: 25px;
+        }
     }
+.main_smart{
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    margin: 0;
+}
+.housing{
+    text-align: center;
+        .yellow{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #fac920;
+            box-shadow: 0px 5px 6px rgba(0,0,0,0.8);
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h4{
+            margin-top: 50px;
+            font-size: 25px;
+        }
+        button{
+            margin-top: 40px;
+            height: 40px;
+            width: 145px;
+            background-color:#f3d43d;
+            border:1px #f3d43d solid;
+            border-radius: 20px;
+            font-size: 17px;
+            color: #4e4751;
+            cursor: pointer;
+        }
+}
+
+.choice{
+    margin-top: 100px;
+    position: relative;
+    .photo{
+        img{
+            z-index: 1;
+            position: absolute;
+            top: 50px;
+            right: 120px;
+        }
+        
+    }
+    .border{
+        position: absolute;
+        z-index: -1;
+        right: 80px;
+        width: 360px;
+        height: 485px;
+        border: #fac920 solid 15px;
+    }
+    h1{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: #4c4450;
+        font-size: 45px;
+        text-transform: uppercase;
+    }
+    span{
+        color: #face34;
+    }
+    select{
+        width: 100%;
+        height: 40px;
+        margin-top: 30px;
+        border-radius: 30px;
+        padding-left: 30px;
+        color: #9c989e;
+    }
+    .gray_btn{
+        background-color: #5a5757;
+        height: 40px;
+        width: 145px;
+        border: 1px #5a5757 solid;
+        border-radius: 20px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        margin-top: 50px;
+    }
+    .yellow_btn{
+        height: 40px;
+        width: 145px;
+        background-color:#f3d43d;
+        border:1px #f3d43d solid;
+        border-radius: 20px;
+        font-size: 18px;
+        color: #4e4751;
+        cursor: pointer;
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+}
+@font-face {
+    font-family: 'Proxima-Nova';
+    src: url(../../../fonts/ProximaNova-Regular.woff)
+}
+
+@font-face{
+    font-family: 'Proxima-Semibold';
+    src:url(../../../fonts/ProximaNova-Semibold.woff)
+}
+@font-face{
+    font-family: 'Proxima-Nova-Light';
+    src:url(../../../fonts/ProximaNova-Light.woff)
+}
+@font-face{
+    font-family: 'Proxima-Nova-Bold';
+    src:url(../../../fonts/ProximaNovaCond-Bold.woff)
+}
+@font-face{
+    font-family: 'Proxima-Nova-Black';
+    src:url(../../../fonts/ProximaNova-Black.woff)
+}
+.container{
+    margin-top: 50px;
+}
+h2{
+    font-family: 'Proxima-Nova-Bold';
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 35px;
+    color: #4b434f;
+}
+h3{
+    font-family: 'Proxima-Semibold';
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #4b434f;
+    text-align: center;
+}
+h4{
+    font-family: 'Proxima-Semibold';
+    text-transform: uppercase;
+    text-align: center;
+    color: #4b434f;
+    margin-top: 10px;
+    cursor: pointer;
+}
+p{
+    font-family: 'Proxima-Nova-Light';
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    color: #4b434f;
+    line-height: 24px;
+}
+button{
+    margin: 10px auto;
+    height: 40px;
+    width: 145px;
+    background-color:#f3d43d;
+    border: solid 1px #f3d43d;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #4e4751;
+    font-family: Proxima-Semibold;
+    cursor: pointer;
+    padding: 0;
+}
+span{
+    color: #f3d43d
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+.lightgrey{
+    margin-top: 50px;
+    background-color: #f2f2f2;
+    padding: 25px 0px 0px 0px;
+    height: 750px;
+}
+.advantages{
+    margin-top: 150px;
+}
+.advantages_list{
+    padding: 25px;
+}
+.house_level img{
+    width: 285px;
+    height: 219px;
+    margin-top: 10px;
+}
+.house_level button{
+    display: block;
+    width: 215px;
+    margin-top: 30px;
+}
+#standart, #luxory, #premium{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 370px;
+    height: 375px;
+    padding: 0px;
+    background-color: white;
+    border-radius: 5%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5)
 }

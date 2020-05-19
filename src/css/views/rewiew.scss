@@ -1,0 +1,67 @@
+.text_div{
+    display: none;
+    width: 90%;
+}
+.text_div:nth-child(2){
+    display: inline-block;
+    margin: 0 auto;
+}
+#carousel img{
+    cursor: pointer;
+}
+.quote_hr_div{
+    border-bottom: solid 2px #4e4751;
+    margin: 25px auto;
+    height: 50px;
+    justify-content: center;
+}
+.qoute_circle{
+    background-color: #4e4751;
+    height: 42px;
+    border-radius: 50%;
+    margin-top: 26px;
+}
+.qoute_circle p{
+    font-family: Proxima-Nova-Bold;
+    color: white;
+    font-size: 55px;
+    line-height: 0px;
+    display: block;
+    position: absolute;
+    top: -48px;
+    left: 6.5px;
+}
+#carou_left, #carou_right{
+    cursor: pointer;
+    height: auto;
+}
+#carou_left{
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+}
+#carou_right{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+#carou_right{
+    cursor: pointer;
+}
+#root span{
+    color:#4e4751;
+    text-transform: uppercase;
+}
+.text_div{
+    height: 120px;
+    position: relative;
+}
+#carousel{
+    display: block;
+    position: relative;
+}
+.container{
+    margin-top: 80px;
+}

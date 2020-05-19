@@ -1,3 +1,2 @@
-//= test
-
-console.log("Main js works");
+//= main_home
+//= rewiew
