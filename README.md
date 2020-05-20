@@ -27,3 +27,15 @@ change file app/settings.py:
 `python manage.py createsuperuser`  
 `python manage.py runserver`  
   
+
+### Django project run
+`git checkout Server`  
+`git pull`  
+`python3.8 -m venv env`  
+`source env/bin/activate` #this is for Linux (MAC?)  
+`pip install -r requirements.txt`  
+`cd app`  
+`python manage.py runserver`  
+
+http://127.0.0.1:8000/  
+  
