@@ -25,3 +25,25 @@
   height: auto;
   display: inline-block;
 }
+
+.btn--orange{
+  display: inline-block;
+  height: 40px;
+  width: 145px;
+  background-color:$btn--bg-color-primary_1;
+  border:1px $btn--bg-color-primary_1 solid;
+  border-radius: 20px;
+  @include font(18px, $font-proximanova-semibold, $btn--color-primary_1, 400);
+  cursor: pointer;
+}
+
+.btn--grey{
+  display: inline-block;
+  background-color: $btn--color-primary_1;
+  height: 40px;
+  width: 145px;
+  border: 1px $btn--color-primary_1 solid;
+  border-radius: 20px;
+  @include font(18px, $font-proximanova-semibold, $btn--color-primary_2--hover, 400);
+  cursor: pointer;
+}

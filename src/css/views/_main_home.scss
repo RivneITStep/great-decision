@@ -1,25 +1,23 @@
 .choice_of_housing{
     margin-top: 100px;
     text-align: center;
-        h1{
-            color: #4c4450;
-            font-size: 45px;
-        }
+        
         span{
-            color: #face34;
-        }
-        p{
-            line-height: 25px;
+            color: $font-span--color-primary;
         }
     }
 .main_smart{
-    height: 450px;
+    height: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
     padding: 5px;
     margin: 0;
+    align-items: center;
+}
+.main_smart_div{
+    width: 100%;
+    height: 200px;
 }
 .housing{
     text-align: center;
@@ -27,9 +25,8 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: #fac920;
+            background-color: $font-span--color-primary;
             box-shadow: 0px 5px 6px rgba(0,0,0,0.8);
-            margin-top: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -39,15 +36,7 @@
             font-size: 25px;
         }
         button{
-            margin-top: 40px;
-            height: 40px;
-            width: 145px;
-            background-color:#f3d43d;
-            border:1px #f3d43d solid;
-            border-radius: 20px;
-            font-size: 17px;
-            color: #4e4751;
-            cursor: pointer;
+            margin-top: 100px;
         }
 }
 .choice{
@@ -60,7 +49,6 @@
             top: 50px;
             right: 120px;
         }
-        
     }
     .border{
         position: absolute;
@@ -68,17 +56,15 @@
         right: 80px;
         width: 360px;
         height: 485px;
-        border: #fac920 solid 15px;
+        border: $font-span--color-primary solid 15px;
     }
     h1{
         margin-top: 30px;
         margin-bottom: 20px;
-        color: #4c4450;
-        font-size: 45px;
         text-transform: uppercase;
     }
     span{
-        color: #face34;
+        color: $font-span--color-primary;
     }
     select{
         width: 100%;
@@ -86,93 +72,69 @@
         margin-top: 30px;
         border-radius: 30px;
         padding-left: 30px;
-        color: #9c989e;
+        color: $default--color__2;
     }
-    .gray_btn{
-        background-color: #5a5757;
-        height: 40px;
-        width: 145px;
-        border: 1px #5a5757 solid;
-        border-radius: 20px;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
+    .btn-grey{
+        margin-top: -50px;
+    }
+    .btn--orange{
         margin-top: 50px;
-    }
-    .yellow_btn{
-        height: 40px;
-        width: 145px;
-        background-color:#f3d43d;
-        border:1px #f3d43d solid;
-        border-radius: 20px;
-        font-size: 18px;
-        color: #4e4751;
+        margin-right: -325px;
+        margin-left: 55px;
     }
 }
 .container{
     margin-top: 50px;
 }
-h2{
-    // font-family: 'Proxima-Nova-Bold';
+.main-fluid h2{
     text-transform: uppercase;
-    text-align: center;
-    font-size: 35px;
-    color: #4b434f;
-}
-h3{
-    // font-family: 'Proxima-Semibold';
-    text-transform: uppercase;
-    font-size: 30px;
-    color: #4b434f;
     text-align: center;
 }
-h4{
-    // font-family: 'Proxima-Semibold';
+.main-fluid h3{
     text-transform: uppercase;
     text-align: center;
-    color: #4b434f;
+}
+.main-fluid h4{
+    text-transform: uppercase;
+    text-align: center;
     margin-top: 10px;
     cursor: pointer;
 }
-p{
-    // font-family: 'Proxima-Nova-Light';
-    text-align: center;
-    font-size: 15px;
-    font-weight: 900;
-    color: #4b434f;
-    line-height: 24px;
-}
-button{
+.main-fluid button{
+    @include font(18px, $font-proximanova-semibold, $btn--color-primary_1, 400);
     margin: 10px auto;
     height: 40px;
     width: 145px;
-    background-color:#f3d43d;
-    border: solid 1px #f3d43d;
+    background-color:$btn--bg-color-primary_1;
+    border: solid 1px $btn--bg-color-primary_1;
     border-radius: 20px;
-    font-size: 18px;
-    color: #4e4751;
-    // font-family: Proxima-Semibold;
     cursor: pointer;
     padding: 0;
 }
-span{
-    color: #f3d43d
+.main-fluid span{
+    color: $font-span--color-primary;
 }
-img{
+.main-fluid img{
     display: block;
     margin: 0 auto;
 }
 .lightgrey{
     margin-top: 50px;
-    background-color: #f2f2f2;
+    background-color: $bg-main--color-primary_2;
     padding: 25px 0px 0px 0px;
     height: 750px;
 }
 .advantages{
-    margin-top: 150px;
+    margin-top: 180px;
 }
 .advantages_list{
     padding: 25px;
+    margin-top: 50px;
+}
+.house_level h3{
+    color: $font-text--color-primary;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .house_level img{
     width: 285px;
@@ -182,7 +144,7 @@ img{
 .house_level button{
     display: block;
     width: 215px;
-    margin-top: 30px;
+    margin-top: 33px;
 }
 #standart, #luxory, #premium{
     display: flex;
@@ -193,7 +155,7 @@ img{
     width: 370px;
     height: 375px;
     padding: 0px;
-    background-color: white;
+    background-color: $bg-main--color-primary_1;
     border-radius: 5%;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }

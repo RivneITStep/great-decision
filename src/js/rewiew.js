@@ -11,6 +11,8 @@ for (let i = 0; i < text_p.length; i ++){
 }
 
 root.innerHTML = text_p[0].innerHTML
+root.style.textAlign="center";
+root.style.marginTop="25px";
 
 left_btn.addEventListener('click', function(){
     index -- ;
