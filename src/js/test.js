@@ -1,1 +1,1 @@
-// console.log("Hello World1232");
+alert("Hello it's test.js")

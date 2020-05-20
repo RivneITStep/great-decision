@@ -50,7 +50,6 @@
             cursor: pointer;
         }
 }
-
 .choice{
     margin-top: 100px;
     position: relative;
@@ -113,46 +112,25 @@
         margin-left: 20px;
     }
 }
-@font-face {
-    font-family: 'Proxima-Nova';
-    src: url(../../../fonts/ProximaNova-Regular.woff)
-}
-
-@font-face{
-    font-family: 'Proxima-Semibold';
-    src:url(../../../fonts/ProximaNova-Semibold.woff)
-}
-@font-face{
-    font-family: 'Proxima-Nova-Light';
-    src:url(../../../fonts/ProximaNova-Light.woff)
-}
-@font-face{
-    font-family: 'Proxima-Nova-Bold';
-    src:url(../../../fonts/ProximaNovaCond-Bold.woff)
-}
-@font-face{
-    font-family: 'Proxima-Nova-Black';
-    src:url(../../../fonts/ProximaNova-Black.woff)
-}
 .container{
     margin-top: 50px;
 }
 h2{
-    font-family: 'Proxima-Nova-Bold';
+    // font-family: 'Proxima-Nova-Bold';
     text-transform: uppercase;
     text-align: center;
     font-size: 35px;
     color: #4b434f;
 }
 h3{
-    font-family: 'Proxima-Semibold';
+    // font-family: 'Proxima-Semibold';
     text-transform: uppercase;
     font-size: 30px;
     color: #4b434f;
     text-align: center;
 }
 h4{
-    font-family: 'Proxima-Semibold';
+    // font-family: 'Proxima-Semibold';
     text-transform: uppercase;
     text-align: center;
     color: #4b434f;
@@ -160,7 +138,7 @@ h4{
     cursor: pointer;
 }
 p{
-    font-family: 'Proxima-Nova-Light';
+    // font-family: 'Proxima-Nova-Light';
     text-align: center;
     font-size: 15px;
     font-weight: 900;
@@ -176,7 +154,7 @@ button{
     border-radius: 20px;
     font-size: 18px;
     color: #4e4751;
-    font-family: Proxima-Semibold;
+    // font-family: Proxima-Semibold;
     cursor: pointer;
     padding: 0;
 }
