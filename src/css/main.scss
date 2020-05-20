@@ -1,15 +1,24 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap-reboot.css';
 @import '../../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 
+@import 'fonts';
+@import 'mixins';
 @import 'variables';
 @import 'settings';
-@import 'fonts';
 
-@import 'mixins';
 @import 'buttons';
 
+<<<<<<< HEAD
 // @import 'views/top-header';
 // @import 'views/header';
 // @import 'views/footer';
+=======
+
+
+@import 'views/header';
+@import 'views/header_internal';
+@import 'views/footer';
+>>>>>>> UI_Ref
 
 @import 'views/main_home';
 @import 'views/rewiew';

@@ -14,21 +14,23 @@
     margin: 25px auto;
     height: 50px;
     justify-content: center;
+    position: relative;
 }
 .qoute_circle{
     background-color: #4e4751;
     height: 42px;
     border-radius: 50%;
     margin-top: 26px;
+    position: relative;
 }
-.qoute_circle p{
+#scobochki{
     // font-family: Proxima-Nova-Bold;
     color: white;
     font-size: 55px;
     line-height: 0px;
     display: block;
     position: absolute;
-    top: -48px;
+    top: 5px;
     left: 6.5px;
 }
 #carou_left, #carou_right{
