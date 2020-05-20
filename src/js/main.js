@@ -1,3 +1,2 @@
 //= main_home
-//= rewiew
-//= test
+//= review
