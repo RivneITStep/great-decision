@@ -16,8 +16,8 @@
 .header_part_2{  
     width: 100%;
     height: 65px;   
-    background-color: $bg-header--color-primary_1;    
-    box-sizing: border-box;          
+    background-color: $bg-header--color-primary_1; 
+     
     span,p {
         display: inline-block;
         color: $default--color__2;
@@ -26,7 +26,8 @@
         @include font(17px, $font-proximanova-semibold, $font-text--color-primary, normal);            
     }   
     span{
-        @include font(20px, $font-proximanova-semibold, $font-text--color-primary, normal);           
+        @include font(20px, $font-proximanova-semibold, $font-text--color-primary, normal);
+        line-height: 19px;          
                               
     }  
     .logo{
@@ -38,17 +39,16 @@
         span{
             position: absolute;
             left: 70px;
-            top:5px
+            top: 10px
         }     
     }
-    .contact{       
-        p{
-            margin-left: 7px;
-            margin-top: 25px;         
-        }
+    .contact{ 
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
         img{
-            margin-left: 25px;
-        }
+            padding-bottom: 5px;
+        }   
     }    
 }
          

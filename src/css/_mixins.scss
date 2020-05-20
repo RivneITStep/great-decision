@@ -4,3 +4,11 @@
     color: $color;
     font-weight: $font-weight;
 }
+
+@mixin button($font-size, $font-family, $color, $bgcolor, $font-weight) {
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $color;
+    background-color: $bgcolor;
+    font-weight: $font-weight;
+}
