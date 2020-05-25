@@ -117,3 +117,25 @@ input:hover {
   @include font(17px, $font-proximanova-bold, $font-text--color-primary, normal);
   }
   }
+
+// Налаштування select в блоці Зробіть вибір 
+.order-options{
+  select {
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 30px;
+    padding-left: 30px;
+    color: $default--color__2;
+}
+  div{
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 5px;
+      margin-top: 30px;
+  }
+  .btn--show_all, .btn--forward {
+      margin-top: 50px;
+      margin-left: 70px;
+  }
+}

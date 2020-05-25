@@ -80,24 +80,6 @@ main {
             margin-top: 0px;
             margin-bottom: 20px;
         }
-        select {
-            width: 100%;
-            height: 40px;
-            margin-top: 30px;
-            border-radius: 30px;
-            padding-left: 30px;
-            color: $default--color__2;
-        }
-        .select_div div{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 5px;
-            margin-top: 30px;
-        }
-        .btn--show_all, .btn--forward {
-            margin-top: 50px;
-            margin-left: 70px;
-        }
     }
     .main-fluid img {
         display: block;
