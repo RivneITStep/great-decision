@@ -12,3 +12,14 @@
     background-color: $bgcolor;
     font-weight: $font-weight;
 }
+@mixin img_border($width, $height, $left, $top, $border-color, $border-width) {
+    width: $width;
+    height: $height;
+    border-style: solid;
+    border-color: $border-color;
+    border-width: $border-width;
+    position: absolute;
+    z-index: -1;
+    top: $top+$border-width;
+    left: $left+$border-width;
+}
