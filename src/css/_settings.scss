@@ -117,3 +117,38 @@ input:hover {
   @include font(17px, $font-proximanova-bold, $font-text--color-primary, normal);
   }
   }
+  
+  // Пагінація
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+  
+    li{
+      background-color: $default--color__1;
+      border: 1px solid #dadada;
+      margin: 5px;
+      padding: 7px 22px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 2px rgba(109, 109, 109, 0.3);
+   
+      a{
+          @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
+          text-decoration: none;
+      }
+      a:hover{
+          @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
+          text-decoration: none;
+      }
+      } 
+      li:hover{
+          background-color: $btn--bg-color-primary_1;
+          border: 1px solid #dadada;
+          margin: 5px;
+          padding: 7px 22px;
+          border-radius: 15px;
+          box-shadow: 2px 2px 2px rgba(109, 109, 109, 0.3);
+    }
+  }
