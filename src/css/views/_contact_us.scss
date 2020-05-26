@@ -1,4 +1,4 @@
-.contact {
+.contact_us {
     position: relative;
     margin-top: 60px; 
     
@@ -17,13 +17,7 @@
             right: 120px;          
         }
         .border {
-            position: absolute;
-            z-index: -1;
-            right: 80px;
-            top: 40px;
-            width: 360px;
-            height: 326px;
-            border: $font-span--color-primary solid 15px;
+            @include img_border(360px,326px,120px,40px,$font-span--color-primary,15px,)        
         }
     }
   
