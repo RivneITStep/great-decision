@@ -76,6 +76,35 @@ input:hover {
   border-radius: 30px;
 }
 
+// textarea
+textarea {
+  background-color: $default--color__1;
+  border: $default--color__2 solid 1px;
+  width: 100%;
+  @include font(15px, $font-proximanova-regular, $font-text--color-primary, 400);
+  padding: 15px;
+  height: 45px;
+  border-radius: 30px;
+}
+textarea:active {
+  background-color: $default--color__1;
+  border: $btn--bg-color-primary_1 solid 1px;
+  width: 100%;
+  @include font(15px, $font-proximanova-regular, $font-text--color-primary, 400);
+  padding: 15px;
+  height: 45px;
+  border-radius: 30px;
+}
+textarea:hover {
+  background-color: $bg-main--color-primary_2;
+  border: $btn--bg-color-primary_1 solid 1px;
+  width: 100%;
+  @include font(15px, $font-proximanova-regular, $font-text--color-primary, 400);
+  padding: 15px;
+  height: 45px;
+  border-radius: 30px;
+}
+
 // Лінки
 .menu{
   a{
