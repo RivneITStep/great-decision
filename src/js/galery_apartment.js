@@ -23,7 +23,7 @@ function lft() {
     if (pos == 0) { 
       console.log(pos + 'if');
     } else {
-      pos += 850;
+      pos += 150;
       box.style.marginLeft = pos + 'px';
       box.style.transition = 'all 1s';
       console.log(pos + 'left');

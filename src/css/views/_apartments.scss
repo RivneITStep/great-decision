@@ -35,15 +35,23 @@
   .btn {
     display: flex;
     justify-content: flex-end;
+
+  }
+
+  button{
+    a{
+      text-decoration: none;
+      color: $font-text--color-primary;
+    }
+    a:hover{
+color: $default--color__1;
+    }
+
   }
 
   .space {
     height: 80px;
   }
-
-//   .border {
-//     @include img_border(360px, 485px, 50px, -65px, $bg-img-border--color-primary_1, 16px);
-// }
 
 .border {
   @include img_border(415px, 315px, 125px, 20px, $bg-img-border--color-primary_1, 16px);

@@ -3,6 +3,8 @@
   .glavna {
     width: 745px;
     margin: 0 auto;
+    position: relative;
+
   }
   
   .hid {
@@ -21,30 +23,22 @@
     flex-wrap: nowrap;
     margin-top: 80px;
   }
-  
-  .dire {
-	position: relative;
-	font-size: 40px;
-	line-height: 31px;
-	color: white;
-  }
-  
-  .dire .left {
+    
+   .left {
 	cursor: pointer;
 	position: absolute;
-	top: -350px;
-	left: 100px;
+	top: 50%;
+	left: -90px;
 	}
   
-  .dire .rightt {
+   .rightt {
 	cursor: pointer;
 	text-align: right;
 	position: absolute;
-	right: 110px;
-    top: -350px;
+	right: -90px;
+    top: 50%;
 	  }
    
-  
   .slike img {
 	cursor: pointer;
 	width: 380px;
@@ -68,14 +62,12 @@
 
   .title {
     @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
-   
-  }
+    }
 
   .name {
     @include font(15px, $font-proximanova-regular, $font-h1--color-primary, 400);
     margin-left: 10px;
     text-align: end;
-   
 }
 
 .price{
@@ -85,12 +77,15 @@
 
 .title-big {
     @include font(24px, $font-proximanova-bold, $font-h1--color-primary, 400);
+    margin-left: 20px;
+
   }
 
   .name-big {
     @include font(24px, $font-proximanova-regular, $font-h1--color-primary, 400);
-    margin-left: 10px;
   }
-
+  .main-text{
+    text-align: justify;
+  }
 
 }
