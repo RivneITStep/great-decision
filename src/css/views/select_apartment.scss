@@ -1,0 +1,96 @@
+//   Галерея
+.select_apartment{
+  .glavna {
+    width: 745px;
+    margin: 0 auto;
+  }
+  
+  .hid {
+	overflow: hidden;
+	width: 1170px;
+
+  }
+
+  .hid img{
+	  padding-right: 30px;
+  }
+  
+  .slike {
+	display: inline-flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 80px;
+  }
+  
+  .dire {
+	position: relative;
+	font-size: 40px;
+	line-height: 31px;
+	color: white;
+  }
+  
+  .dire .left {
+	cursor: pointer;
+	position: absolute;
+	top: -350px;
+	left: 100px;
+	}
+  
+  .dire .rightt {
+	cursor: pointer;
+	text-align: right;
+	position: absolute;
+	right: 110px;
+    top: -350px;
+	  }
+   
+  
+  .slike img {
+	cursor: pointer;
+	width: 380px;
+  }
+ 
+//  --------------------------------
+
+.upper {
+    padding: 55px 20px 40px 20px;
+  }
+
+
+.flat--bcg {
+    background-color: $bg-main--color-primary_2;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border: 1px solid $bcg-border-flats;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+
+  .title {
+    @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
+   
+  }
+
+  .name {
+    @include font(15px, $font-proximanova-regular, $font-h1--color-primary, 400);
+    margin-left: 10px;
+    text-align: end;
+   
+}
+
+.price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.title-big {
+    @include font(24px, $font-proximanova-bold, $font-h1--color-primary, 400);
+  }
+
+  .name-big {
+    @include font(24px, $font-proximanova-regular, $font-h1--color-primary, 400);
+    margin-left: 10px;
+  }
+
+
+}

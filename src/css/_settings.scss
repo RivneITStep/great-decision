@@ -157,11 +157,11 @@ textarea:hover {
   
     li{
       background-color: $default--color__1;
-      border: 1px solid #dadada;
+      border: 1px solid $bcg-border-pagination;
       margin: 5px;
       padding: 7px 22px;
       border-radius: 15px;
-      box-shadow: 2px 2px 2px rgba(109, 109, 109, 0.3);
+      box-shadow: 2px 2px 2px $shadow-pagination;
    
       a{
           @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
@@ -174,11 +174,11 @@ textarea:hover {
       } 
       li:hover{
           background-color: $btn--bg-color-primary_1;
-          border: 1px solid #dadada;
+          border: 1px solid $bcg-border-pagination;
           margin: 5px;
           padding: 7px 22px;
           border-radius: 15px;
-          box-shadow: 2px 2px 2px rgba(109, 109, 109, 0.3);
+          box-shadow: 2px 2px 2px $shadow-pagination;
     }
   }
 
