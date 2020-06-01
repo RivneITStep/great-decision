@@ -1,3 +1,7 @@
 node_modules
 /dist
 .directory
+
+#ignore files from django branches
+env
+app
