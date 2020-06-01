@@ -1,22 +1,18 @@
 //   Галерея
 .select_apartment{
-  .glavna {
+  .main-apartment {
     width: 745px;
     margin: 0 auto;
     position: relative;
-
   }
   
-  .hid {
+  .hidden {
 	overflow: hidden;
-	width: 1170px;
-
-  }
-
-  .hid img{
+  width: 1170px;
+  img{
 	  padding-right: 30px;
   }
-  
+  }
   .slike {
 	display: inline-flex;
 	flex-direction: row;
@@ -31,7 +27,7 @@
 	left: -90px;
 	}
   
-   .rightt {
+   .right {
 	cursor: pointer;
 	text-align: right;
 	position: absolute;
