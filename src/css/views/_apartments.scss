@@ -6,7 +6,7 @@
     justify-content: space-around;
     padding-top: 30px;
     padding-bottom: 20px;
-    border: 1px solid #f8f8f8;
+    border: 1px solid $bcg-border-flats;
     margin-bottom: 30px;
   }
 
@@ -35,10 +35,40 @@
   .btn {
     display: flex;
     justify-content: flex-end;
+
+  }
+
+  button{
+    a{
+      text-decoration: none;
+      color: $font-text--color-primary;
+    }
+    a:hover{
+color: $default--color__1;
+    }
+
   }
 
   .space {
-    height: 40px;
+    height: 80px;
   }
+
+.border {
+  @include img_border(415px, 315px, 125px, 20px, $bg-img-border--color-primary_1, 16px);
+}
+
+.border-right{
+  @include img_border(415px, 315px, 0px, 20px, $bg-img-border--color-primary_1, 16px);
+}
+
+
+img{
+position: relative;
+}
+
+.imgright{
+  display: flex;
+  justify-content: flex-end;
+}
 
 }     
