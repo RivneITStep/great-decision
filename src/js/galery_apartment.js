@@ -14,19 +14,21 @@ function run() {
   main.setAttribute("src", displ);
 }
 
-left.addEventListener("click", lft);
-right.addEventListener("click", rght);
+if (left){
+  left.addEventListener("click", lft);
+}
+if (right){
+  right.addEventListener("click", rght);
+}
 var pos = 0;
 
 function lft() { 
   if (pos != null) {
     if (pos == 0) { 
-      console.log(pos + 'if');
     } else {
       pos += 150;
       slike.style.marginLeft = pos + 'px';
       slike.style.transition = 'all 1s';
-      console.log(pos + 'left');
     }
   }
 }
@@ -36,7 +38,6 @@ function rght() {
     pos -= 150;
     slike.style.marginLeft = pos + 'px';
     slike.style.transition = 'all 1s';
-    console.log(pos + 'rght');
     if (pos == -2400) { 
       pos = 150;
     }
