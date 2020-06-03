@@ -9,22 +9,22 @@ for (var i = 0; i < small_slike.length; i++) {
   small_slike[i].addEventListener('click', run);
 }
 
-function run() { 
+function run() {
   var displ = this.getAttribute("src");
   main.setAttribute("src", displ);
 }
 
-if (left){
+if (left) {
   left.addEventListener("click", lft);
 }
-if (right){
+if (right) {
   right.addEventListener("click", rght);
 }
 var pos = 0;
 
-function lft() { 
+function lft() {
   if (pos != null) {
-    if (pos == 0) { 
+    if (pos == 0) {
     } else {
       pos += 150;
       slike.style.marginLeft = pos + 'px';
@@ -33,12 +33,12 @@ function lft() {
   }
 }
 
-function rght() { 
+function rght() {
   if (pos != null) {
     pos -= 150;
     slike.style.marginLeft = pos + 'px';
     slike.style.transition = 'all 1s';
-    if (pos == -2400) { 
+    if (pos == -2400) {
       pos = 150;
     }
   }
