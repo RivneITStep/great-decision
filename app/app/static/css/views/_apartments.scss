@@ -44,7 +44,7 @@
       color: $font-text--color-primary;
     }
     a:hover{
-color: $default--color__1;
+      color: $default--color__1;
     }
 
   }
@@ -64,6 +64,8 @@ color: $default--color__1;
 
 img{
 position: relative;
+height: 320px;
+width: 500px;
 }
 
 .imgright{
