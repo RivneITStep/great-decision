@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'pages',
     'realtor',
     'apartments',
+    'account',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +137,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'app/static'),
 ]
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+COMPRESS_ROOT = os.path.join(BASE_DIR, 'app/static')
+COMPRESS_ENABLED = True
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'

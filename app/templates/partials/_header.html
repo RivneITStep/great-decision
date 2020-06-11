@@ -7,29 +7,17 @@
 {% endif %}
         <div class="header_part_1">
         </div>
-        <div class="header_part_2">
-            <div class="container">
-                <div class="row">
+        <div class="container-fluid header_part_2 login">
+            <div class="container header_part_2">
+                <div class="row header_part_2">
                     <div class="col-5 logo">
-                        <a href="index.html">
+                        <a href="{% url 'index' %}">
                             <img src="{% static 'img/Logo.png' %}" alt="Logo">
                             <span>GREAT<br>DECISION</span>
                         </a>
                     </div>
-                    <div class="col-7 contact">
-                        <div>
-                            <img src="{% static 'img/phone.png' %}" alt="Phone">
-                            <p>Tel + 380 111 8011</p>
-                        </div>
-                        <div>
-                            <img src="{% static 'img/mail.png' %}" alt="Mail">
-                            <p>Email: exclusivedirection@ade.com</p>
-                        </div>
-                        <div class="login">
-                            <img src="{% static 'img/login.png' %}" alt="Login">
-                            <a href="#">Кабінет</a>
-                        </div>
-                    </div>
+                    <a class="offset-5 col-1 align-self-center enter" href="/account/login">Вхід</a>
+                    <a class="col-1 align-self-center register" href="/account/register">Реєстрація</a>
                 </div>
             </div>
         </div>
@@ -62,7 +50,7 @@
                             Ми підберемо житло саме під вас, ми працюємо <br>
                             для найвибагливіших клієнтів
                         </p>
-                        <form action="about.html">
+                        <form action="{% url 'about' %}">
                             <button class="btn--forward">Більше >></button>
                         </form>
                     </div>

@@ -77,3 +77,11 @@ http://127.0.0.1:8000/
 + Перевірте чи правильний урл до картинки. Чи не забули {{ STATIC_PREFIX }}. Якщо url в css - потрібно пофіксити url в css (додати '/static').  
 + Перевірте чи існує така картинка в app/static/img. Якщо ні - потрібно додати саму картинку.  
 + Якщо не підтягується верстка, нема таких класів як в збірці - потрібно оновити css файл. Взяти зі збірки, з папки dist, main.css і main.css.map, і покласти в static/css  
+
+#### Django compressor
+https://django-compressor.readthedocs.io/en/latest/quickstart/  
+використовується для зжимання JS, CSS  
+
+#### django-libsass
+https://github.com/torchbox/django-libsass  
+дає можливість використання scss з Django compressor  

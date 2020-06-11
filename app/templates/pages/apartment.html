@@ -25,6 +25,21 @@
                     {% if apartment.photo_2 %}
                     <img src="{{ apartment.photo_2.url }}" width="100%" alt="" class="small-slike">
                     {% endif %}
+                    {% if apartment.photo_3 %}
+                    <img src="{{ apartment.photo_3.url }}" width="100%" alt="" class="small-slike">
+                    {% endif %}
+                    {% if apartment.photo_4 %}
+                    <img src="{{ apartment.photo_4.url }}" width="100%" alt="" class="small-slike">
+                    {% endif %}
+                    {% if apartment.photo_5 %}
+                    <img src="{{ apartment.photo_5.url }}" width="100%" alt="" class="small-slike">
+                    {% endif %}
+                    {% if apartment.photo_6 %}
+                    <img src="{{ apartment.photo_6.url }}" width="100%" alt="" class="small-slike">
+                    {% endif %}
+                    {% if apartment.photo_7 %}
+                    <img src="{{ apartment.photo_7.url }}" width="100%" alt="" class="small-slike">
+                    {% endif %}
                 </div>
             </div>
 <!-- --------------------------------------------------------- -->
@@ -36,7 +51,9 @@
                 <p>Місто:</p>
                 <p>Тип житла:</p>
                 <p>Загальна площа:</p>
+                 {% if apartment.square_live %}
                 <p>Житлова площа:</p>
+                 {% endif %}
                 <p>Кімнат:</p>
                 <p>Поверх:</p>
             </div>
@@ -44,13 +61,18 @@
                 <p>{{ apartment.city }}</p>
                 <p>{{ apartment.apartment_type }}</p>
                 <p>{{ apartment.square_all }} м<sup>2</sup></p>
-                <p>{{ apartment.square_live}} м<sup>2</sup></p>
+                {% if apartment.square_live %}
+                <p>{{ apartment.square_live }} м<sup>2</sup></p>
+                {% endif %}
+                
                 <p>{{ apartment.rooms }}</p>
-                <p>{{ apartment.floor}}</p>
+                <p>{{ apartment.floor }}</p>
             </div>
             <div class="col-7">
-                <p class="main-text">Остання квартира в новому сучасному жилому комплексі, панорамні вікна; стіни - червона цегла; можливо зробити перепланування на свій розсуд; комплекс закритого типу; охорона; поруч з будинком розташований дитячий садок та ліцей нового зразка з поглибленим вивченням англійської мови; будинок зданий та введений в єксплуатацію, триває процес отримання документів. Будинок бізнес-класу, з квартирами підвищеної комфортності і невеликою кількістю квартир на поверсі</p> 
-                <p class="price"><span class="name-big" >Вартість</span> <span class="title-big">65 тис.дол</span></p> 
+                {% if apartment.description %}
+                <p class="main-text">{{ apartment.description }}</p> 
+                {% endif %}
+                <p class="price"><span class="name-big" >Вартість</span> <span class="title-big">{{ apartment.price }} USD</span></p>
             </div>
         </div>
     </div>
