@@ -1,9 +1,149 @@
-#header{
-    background: #f3d43d;
-    color: black;
+@font-face {
+  font-family: ProximaNovaBold;
+  src: url("../fonts/proximanova/ProximaNova-Bold.woff");
 }
-#header h1{
-    font-size: 24px;
-    color: black;
 
+@font-face {
+  font-family: ProximaNovaBlack;
+  src: url("../fonts/proximanova/ProximaNova-Black.woff");
+}
+
+@font-face {
+  font-family: ProximaNovaRegular;
+  src: url("../fonts/proximanova/ProximaNova-Regular.woff");
+}
+
+#header {
+  background: #f3d43d;
+  color: black;
+}
+#header h1 {
+  font-size: 24px;
+  color: #4b434f;
+  font-family: ProximaNovaBold;
+}
+
+#content-main th a {
+  color: #4b434f;
+}
+
+#content-main td a {
+  color: #f7941e;
+}
+
+#user-tools {
+  font-family: ProximaNovaBold;
+  font-size: 14px;
+}
+
+#user-tools strong {
+  color: #f7941e;
+  margin-right: 30px;
+}
+
+#header a:link {
+  color: #4b434f;
+  text-decoration: none;
+}
+#header a {
+  color: #4b434f;
+  text-decoration: none;
+}
+#header a:visited {
+  color: #4b434f;
+  text-decoration: none;
+}
+
+body {
+  background-image: url("../img/city1.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #fefdf6;
+  z-index: -1;
+}
+#content h1 {
+  font-family: ProximaNovaBold;
+  font-size: 28px;
+  color: #fefdf6;
+}
+
+#content-main {
+  margin-top: 90px;
+}
+#content-main a {
+  font-family: ProximaNovaBold;
+  font-size: 14px;
+}
+
+#content-main table {
+    box-shadow: rgb(196, 196, 196);
+}
+
+a.section:link,
+a.section:visited {
+  color: #4b434f;
+  text-decoration: none;
+}
+
+#content-related {
+  font-family: ProximaNovaRegular;
+}
+
+#content-related ul li a {
+  font-size: 14px;
+  color: #4b434f;
+}
+
+/* вирівнювання */
+
+.dashboard #content {
+  width: auto;
+}
+
+#content-main {
+  float: left;
+  width: 72%;
+}
+
+#content-related {
+  float: right;
+  width: 25%;
+  position: relative;
+  background-color: #fff1cb;
+  margin-right: 0;
+  padding: 0 20px 0 20px;
+}
+#content-related .actionlist {
+    margin: 25px 10px;
+}
+
+#content-related .actionlist li {
+    padding-left: 25px;
+}
+
+#content-related h2 {
+  font-family: ProximaNovaBold;
+  font-size: 24px;
+  color: #4b434f;
+}
+
+#content-related h3{
+    font-family: ProximaNovaRegular;
+    font-size: 20px;
+    color: #4b434f;}
+
+.colMS {
+  margin-right: 0;
+}
+
+/* ------------------------- */
+
+#content-related .module h2 {
+  font-size: 24px;
+}
+
+.module caption {
+  background-color: #ebcd9c;
+  font-size: 14px;
+  color: 4b434f;
 }
