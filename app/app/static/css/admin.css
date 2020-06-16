@@ -27,9 +27,18 @@
   color: #4b434f;
 }
 
-#content-main td a {
+.model-realtor td a {
   color: #f7941e;
 }
+
+#result_list tbody a{
+  color: #4b434f;
+}
+
+.field-is_published input{
+  background-color: #f7941e;
+}
+
 
 #user-tools {
   font-family: ProximaNovaBold;
@@ -145,5 +154,35 @@ a.section:visited {
 .module caption {
   background-color: #ebcd9c;
   font-size: 14px;
-  color: 4b434f;
+  color: #4b434f;
+
 }
+
+div.breadcrumbs {
+  background: #fefdf6;
+  font-family: ProximaNovaRegular;
+  font-size: 14px;
+  color: #4b434f;
+}
+
+div.breadcrumbs a{
+  font-family: ProximaNovaBold;
+  font-size: 14px;
+  color: #4b434f;
+}
+
+div.breadcrumbs a:hover{
+  color: #f7941e;
+}
+
+.object-tools a:link{
+  background-color: #f7941e;
+}
+
+tbody, p.paginator, .row1, .row2, .row{
+  background-color: #fff;
+
+}
+
+
+
