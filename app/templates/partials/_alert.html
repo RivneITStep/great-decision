@@ -1,18 +1,10 @@
 {% if messages %}
+<div class="position-fixed" id="alerts-container" style="right: 100px; top: 150px;">
 {% for message in messages %}
-    <div class="container">
-        <div class="row">
-            <div class="fade show alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
-                <button type="button" class="close" data-dismiss="alert"><span
-                        aria-hidden="true">&times;</span></button>
-                        <strong>{{ message.title }} </strong> {{ message }}
-            </div>
-        </div>
+    <div class="ml-auto fade show alert alert-{{ message.tags }} alert-dismissible text-center" role="alert" style="display: none;">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        <strong>{{ message }}</strong>
     </div>
 {% endfor %}
+</div>
 {% endif %}
-
-
-{% comment %} <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert">
-                <button type="button" class="close" data-dismiss="alert"><span
-                        aria-hidden="true">&times;</span></button> {% endcomment %}

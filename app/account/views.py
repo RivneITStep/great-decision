@@ -13,11 +13,11 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            print('User logged in')
             messages.success(request, 'User logged in')
+            messages.error(request, 'error test')
+            messages.warning(request, 'warning test')
             return redirect('dashboard')
         else:
-            print("Incorrect login or password")
             messages.error(request, 'Incorrect login or password')
             return redirect('login')
     #request.method == GET
@@ -35,15 +35,11 @@ def register(request):
         password = request.POST['password']
         confirm_password = request.POST['confirm-password']
 
-        if password == confirm_password:
-            if User.objects.filter(username=username).exists():
-                print("user exists")
-                messages.error(request, "user exists")
-                return redirect("register")
-            if User.objects.filter(email=email).exists():
-                print("Email exists")
-                messages.error(request, "email exists")
-                return redirect("register")
+        user_condition = not User.objects.filter(username=username).exists()
+        password_condition = password == confirm_password
+        email_condition = not User.objects.filter(email=email).exists()
+
+        if user_condition and password_condition and email_condition:
             user = User.objects.create_user(
                 username=username,
                 password=password,
@@ -52,13 +48,18 @@ def register(request):
                 last_name=last_name,
             )
             user.save()
-            print('registered')
-            messages.success(request, 'registered')
+            messages.success(request, 'User registered')
             return redirect('login')
         else:
-            print("passwords do not match")
-            messages.error(request, "passwords do not match")
-            return redirect('register')
+            if not user_condition:
+                messages.error(request, "User with login '" +
+                               username + "' exists")
+            if not password_condition:
+                messages.error(request, "Passwords do not match")
+            if not email_condition:
+                messages.error(request, "User with email '"+email+"' exists")
+            return redirect("register")
+    #request.method == GET
     data = {"header_h1": "Реєстрація",
             "header_p": "Головна >> Реєстрація"}
     return render(request, 'account/register.html', context=data)
@@ -67,7 +68,6 @@ def register(request):
 def logout(request):
     if request.method == "POST":
         auth.logout(request)
-        print("Logged out")
         messages.success(request, "Logged out")
     return redirect('index')
 

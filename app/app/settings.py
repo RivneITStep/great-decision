@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from .mail_auth import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 from django.contrib.messages import constants as messages
 import os
 
@@ -155,3 +156,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     50: 'critical',
 }
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
