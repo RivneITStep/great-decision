@@ -87,11 +87,8 @@ DATABASES = {
         'HOST': '194.44.93.225'
     }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'postgres',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'postgres',
-    #     'HOST': 'localhost',
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': 'mydatabase.sqlite3',
     # }
 }
 
@@ -150,3 +147,5 @@ COMPRESS_PRECOMPILERS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'
+
+LOGIN_URL = '/account/login'

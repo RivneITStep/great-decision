@@ -10,7 +10,9 @@ li {
   margin: 0;
   padding: 0;
 }
-
+input, button, textarea, select, a{
+  outline: none;
+}
 // Заголовки
 h1 {
   @include font(40px, $font-proximanova-black, $font-h1--color-primary, 600);

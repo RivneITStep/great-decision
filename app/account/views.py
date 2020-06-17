@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
-# from django.contrib.auth import authenticate, login
+from django.core.paginator import Paginator
+from apartments.models import Apartments
+from django.contrib.auth.decorators import login_required
 
 
 def login(request):
@@ -63,5 +65,19 @@ def logout(request):
     return redirect('index')
 
 
+@login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html')
+    apartments = Apartments.objects.order_by(
+        '-list_date').filter(is_published=True, favorits=request.user)
+
+    paginator = Paginator(apartments, 2)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
+
+    context = {
+        "apartments": page,
+        "header_h1": "Dashboard",
+        "header_p": "Головна >> Dashboard",
+    }
+
+    return render(request, 'account/dashboard.html', context)
