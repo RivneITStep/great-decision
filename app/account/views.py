@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from apartments.models import Apartments
@@ -14,9 +14,11 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             print('User logged in')
+            messages.success(request, 'User logged in')
             return redirect('dashboard')
         else:
             print("Incorrect login or password")
+            messages.error(request, 'Incorrect login or password')
             return redirect('login')
     #request.method == GET
     data = {"header_h1": "Вхід",
@@ -36,9 +38,11 @@ def register(request):
         if password == confirm_password:
             if User.objects.filter(username=username).exists():
                 print("user exists")
+                messages.error(request, "user exists")
                 return redirect("register")
             if User.objects.filter(email=email).exists():
                 print("Email exists")
+                messages.error(request, "email exists")
                 return redirect("register")
             user = User.objects.create_user(
                 username=username,
@@ -49,9 +53,11 @@ def register(request):
             )
             user.save()
             print('registered')
+            messages.success(request, 'registered')
             return redirect('login')
         else:
             print("passwords do not match")
+            messages.error(request, "passwords do not match")
             return redirect('register')
     data = {"header_h1": "Реєстрація",
             "header_p": "Головна >> Реєстрація"}
@@ -62,6 +68,7 @@ def logout(request):
     if request.method == "POST":
         auth.logout(request)
         print("Logged out")
+        messages.success(request, "Logged out")
     return redirect('index')
 
 

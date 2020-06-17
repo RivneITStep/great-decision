@@ -9,8 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
     {% compress css %}
-        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-reboot.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-grid.css' %}">
+        {% comment %} <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-reboot.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap-grid.css' %}"> {% endcomment %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
         <link rel="stylesheet" type="text/x-scss" href="{% static "css/main.scss" %}">
         <link rel="stylesheet" href="{% static 'css/custom.css' %}"
     {% endcompress %}
@@ -18,6 +19,7 @@
 </head>
 <body>
     {% include 'partials/_header.html' %}
+    {% include 'partials/_alert.html' %}
     {% block content %} {% endblock %}
     {% include 'partials/_review.html' %}
     {% include 'partials/_footer.html' %}
