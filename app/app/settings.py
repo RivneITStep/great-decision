@@ -152,6 +152,6 @@ MEDIA_URL = '/uploads/'
 LOGIN_URL = '/account/login'
 
 MESSAGE_TAGS = {
-    messages.ERROR: '',
+    messages.ERROR: 'danger',
     50: 'critical',
 }
