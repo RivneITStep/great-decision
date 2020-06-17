@@ -1,17 +1,24 @@
 from django.shortcuts import render, redirect
-from .models import Apartments
+from .models import Apartments, ApartmentType
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 
 
 def index(request):
     apartments = Apartments.objects.order_by(
         '-list_date').filter(is_published=True)
-
+    # check if this is search request
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city is not None:
+            # print("city:", type(city), city)
+            apartments = apartments.filter(city__iexact=city)
+    
     paginator = Paginator(apartments, 2)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
-
+    
     context = {
         "apartments": page,
         "header_h1": "Квартири <span>для вас</span>",
@@ -26,6 +33,7 @@ def apartment(request, apartment_id):
         "apartment": apartment,
         "header_h1": "Квартири <span>для вас</span>",
         "header_p": "Головна >> Квартири для вас",
+        "in_favorits": request.user in apartment.favorits.all(),
     }
     return render(request, "pages/apartment.html", context)
 
@@ -33,7 +41,6 @@ def apartment(request, apartment_id):
 def search(request):
     apartments_list = Apartments.objects.order_by(
         '-list_date').filter(is_published=True)
-    # print("list: ", apartments_list)
     if 'city' in request.GET:
         city = request.GET['city']
         if city:
@@ -47,13 +54,17 @@ def search(request):
     return render(request, "pages/search.html", context)
 
 
-def to_favorits(request):
+def favorits(request):
     if request.method == "POST":
         apartment_id = request.POST['apartment_id']
+        action = request.POST['action']
         if request.user != 'AnonymousUser':
-            apartment=Apartments.objects.filter(id=apartment_id)
-            filtered_apartment = apartment.filter(favorits=request.user)
-            if filtered_apartment.count() == 0:
-                apartment[0].favorits.add(request.user)
-                apartment[0].save()
-    return redirect("/apartments/"+apartment_id)
+            apartment = get_object_or_404(Apartments, pk=apartment_id)
+            if action == 'add':
+                if request.user not in apartment.favorits.all():
+                    apartment.favorits.add(request.user)
+            if action == 'delete':
+                if request.user in apartment.favorits.all():
+                    apartment.favorits.remove(request.user)
+        return redirect(reverse("apartment", kwargs={"apartment_id": apartment_id}))
+    return redirect("apartments")

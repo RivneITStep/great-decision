@@ -78,10 +78,11 @@
         {% if user.is_authenticated %}
             <div class="row">
                 <div class="col-2">
-                    <form action="/apartments/to-favorits" method="POST">
+                    <form action="/apartments/favorits" method="POST">
                         {% csrf_token %}
-                        <input type="submit" value="В обрані" class="btn--forward">
+                        <input type="submit" value="{% if not in_favorits %}В обрані{% else %}З обраних{% endif %}" class="btn--forward">
                         <input type="hidden" name="apartment_id" value="{{ apartment.id }}">
+                        <input type="hidden" name="action" value="{% if not in_favorits %}add{% else %}delete{% endif %}">
                     </form>
                 </div>
             </div>

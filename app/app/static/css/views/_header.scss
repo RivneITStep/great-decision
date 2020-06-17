@@ -63,6 +63,9 @@
         a:last-child{
             margin-right: -15px;
         }
+        .menu-active{
+            background-color: $btn--bg-color-primary_2--hover;
+        }
     }
 }
 
