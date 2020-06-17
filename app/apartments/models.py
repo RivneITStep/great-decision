@@ -31,7 +31,7 @@ class Apartments(models.Model):
     photo_7 = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True)
     realtor = models.ForeignKey(
         Realtor, on_delete=models.DO_NOTHING, blank=True, null=True)
-    favorits = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    favorits = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
 
     def __str__(self):
         return self.title
@@ -47,11 +47,3 @@ class ApartmentType(models.Model):
     def __str__(self):
         return self.title
 
-
-# class Favorits(models.Model):
-#     apartment_id = models.ForeignKey("Apartments", on_delete=models.DO_NOTHING)
-#     user_id = models.ForeignKey(
-#         settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING)
-
-#     def __str__(self):
-#         return self.apartment_id
