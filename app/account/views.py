@@ -16,6 +16,7 @@ def login(request):
             messages.success(request, 'User logged in')
             messages.error(request, 'error test')
             messages.warning(request, 'warning test')
+
             return redirect('dashboard')
         else:
             messages.error(request, 'Incorrect login or password')
