@@ -203,24 +203,31 @@ textarea:hover {
     border-radius: 15px;
     box-shadow: 2px 2px 2px $shadow-pagination;
 
+    &:hover {
+      background-color: $btn--bg-color-primary_1;
+      border: 1px solid $bcg-border-pagination;
+      margin: 5px;
+      padding: 7px 22px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 2px $shadow-pagination;
+    }
+
     a {
       @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
       text-decoration: none;
-    }
+      border: none;
+      background-color: transparent;
 
-    a:hover {
-      @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
-      text-decoration: none;
-    }
-  }
+      &.page-link {
+        box-shadow: none;
+      }
 
-  li:hover {
-    background-color: $btn--bg-color-primary_1;
-    border: 1px solid $bcg-border-pagination;
-    margin: 5px;
-    padding: 7px 22px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 2px $shadow-pagination;
+      &:hover {
+        @include font(15px, $font-proximanova-bold, $font-h1--color-primary, 400);
+        text-decoration: none;
+        background-color: transparent;
+      }
+    }
   }
 }
 
