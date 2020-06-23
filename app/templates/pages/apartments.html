@@ -57,15 +57,15 @@
             <div class="pagination col-12">
                 <nav aria-label="Page navigation example">
                     <ul class="step-links pagination">
-                        <li class='page-item'><a class='page-link' {% if apartments.has_previous %}href="?page={{ apartments.previous_page_number }}"{% else %}href="#"{% endif %}>previous</a></li>
+                        <li class='page-item'><a class='page-link' {% if apartments.has_previous %}href="?page={{ apartments.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}"{% else %}href="#"{% endif %}>previous</a></li>
                         {% for i in apartments.paginator.page_range %}
-                        {% if i == apartments.number %}
-                        <li class='page-item'><a style="color:red;" class='page-link' href="?page={{i}}">{{i}}</a></li>
-                        {% else %}
-                        <li class='page-item'><a class='page-link' href="?page={{i}}">{{i}}</a></li>
-                        {% endif %}
+                            {% if i == apartments.number %}
+                                <li class='page-item'><a style="color:red;" class='page-link' href="?page={{i}}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">{{i}}</a></li>
+                            {% else %}
+                                <li class='page-item'><a class='page-link' href="?page={{i}}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">{{i}}</a></li>
+                            {% endif %}
                         {% endfor %}                       
-                        <li class='page-item'><a class='page-link' {% if apartments.has_next %}href="?page={{ apartments.next_page_number }}"{% else %}href="#"{% endif %}>next</a></li>
+                        <li class='page-item'><a class='page-link' {% if apartments.has_next %}href="?page={{ apartments.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}"{% else %}href="#"{% endif %}>next</a></li>
                     </ul>
                 </nav>
             </div>
