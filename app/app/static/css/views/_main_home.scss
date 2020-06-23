@@ -65,7 +65,7 @@ main.home {
         .order-img {
             position: relative;
         }
-        .border {
+        .img-border {
             @include img_border(360px, 485px, 50px, -65px, $bg-img-border--color-primary_1, 16px);
         }
         h2 {
