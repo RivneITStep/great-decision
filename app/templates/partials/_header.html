@@ -16,24 +16,42 @@
                             <span>GREAT<br>DECISION</span>
                         </a>
                     </div>
-                    <a class="offset-5 col-1 align-self-center enter" href="/account/login">Вхід</a>
-                    <a class="col-1 align-self-center register" href="/account/register">Реєстрація</a>
+                    {% if user.is_authenticated %}
+                        <a class="offset-2 col-4 align-self-center enter" href="{% url 'dashboard' %}">Welcome, {{ user.username }}</a>
+                        <a class="col-1 align-self-center" href="javascript:{document.getElementById('logout').submit()}" >Вихід</a>
+                        <form action="{% url 'logout' %}" id="logout" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                    {% else %}
+                        <a class="offset-2 col-4 align-self-center enter" href="{% url 'login' %}">Вхід</a>
+                        <a class="col-1 align-self-center" href="{% url 'register' %}">Реєстрація</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
         <div class="header_part_3">
             <div class="container">
                 <div class="row">
-                    <div class="col-12  menu">
-                        <a {% if request.path == "/" %} class="menu-active" {% endif %} href="{% url 'index' %}">Головна</a>
-                        <a href="/about">Про нас</a>
-                        <a href="/guarantee">Гарантії</a>
-                        <a href="/we_offer">Що пропонуємо</a>
-                        <a href="/order">Замовити</a>
-                        <a href="/prices">Ціни</a>
-                        <a href="/testimonials">Відгуки</a>
-                        <a href="/discounts">Знижки</a>
-                        <a href="/contact_us">Контакти</a>
+                    <div class="col-12 menu">
+                        {% url 'index' as url_index %}
+                        <a {% if request.path == url_index %}class="menu-active"{% endif %} href="{% url 'index' %}">Головна</a>
+                        {% url 'about' as url_about %}
+                        <a {% if request.path == url_about %}class="menu-active"{% endif %} href="{% url 'about' %}">Про нас</a>
+                        {% url 'guarantee' as url_guarantee %}
+                        <a {% if request.path == url_guarantee %}class="menu-active"{% endif %} href="{% url 'guarantee' %}">Гарантії</a>
+                        {% url 'we_offer' as url_we_offer %}
+                        <a {% if request.path == url_we_offer %}class="menu-active"{% endif %} href="{% url 'we_offer' %}">Що пропонуємо</a>
+                        {% url 'order' as url_order %}
+                        <a {% if request.path == url_order %}class="menu-active"{% endif %} href="{% url 'order' %}">Замовити</a>
+                        {% url 'prices' as url_prices %}
+                        <a {% if request.path == url_prices %}class="menu-active"{% endif %} href="{% url 'prices' %}">Ціни</a>
+                        {% url 'testimonials' as url_testimonials %}
+                        <a {% if request.path == url_testimonials %}class="menu-active"{% endif %} href="{% url 'testimonials' %}">Відгуки</a>
+                        {% url 'discounts' as url_discounts %}
+                        <a {% if request.path == url_discounts %}class="menu-active"{% endif %} href="{% url 'discounts' %}">Знижки</a>
+                        {% url 'contact_us' as url_contact_us %}
+                        <a {% if request.path == url_contact_us %}class="menu-active"{% endif %} href="{% url 'contact_us' %}">Контакти</a>
                     </div>
                 </div>
             </div>

@@ -184,5 +184,7 @@ tbody, p.paginator, .row1, .row2, .row{
 
 }
 
-
-
+.column-actions_,
+.field-actions_{
+    text-align: center;
+}

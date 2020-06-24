@@ -5,8 +5,28 @@
         <div class="row">
             <div class="col-12">
                 <p class="text-title upper">
-                    Вибір власного житла- це один з найважливіших рішень у житті людини. Це не дивно, адже від вибору житла залежатиме комфорт і затишок проживання в певному середовищі кожної людини.<br>Саме тому перед придбанням нової квартири, потрібно обов'язково ретельно підійти до цього питання, щоб не помилитися і зробити максимально правильний вибір квартири для свого подальшого життя.
-                </p>
+                <form action="{% url 'apartments' %}">
+                    <div class="col-6 order-options">
+                        <h2 class="mt-4">Зробіть <span class="yellow">вибір</span></h2>
+                        <input type="text" name="city" placeholder="City">
+                        <select>
+                            <option disabled selected>Тип житла</option>
+                            <option></option>
+                        </select>
+                        <select>
+                            <option disabled selected>Площа</option>
+                            <option></option>
+                        </select>
+                        <select>
+                            <option disabled selected>Вартість</option>
+                            <option></option>
+                        </select>
+                        <div class="d-flex col-12">
+                            <button type="button" class="btn--show_all" onclick="window.location='{% url 'apartments' %}'">Показати все</button>
+                            <button type="submit" class="btn--forward">Пошук >></button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
             {% if apartments %}
@@ -34,25 +54,25 @@
                 <div class="col-12 space"></div>
                 {% endfor %}
             </div>
+            <div class="pagination col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="step-links pagination">
+                        <li class='page-item'><a class='page-link' {% if apartments.has_previous %}href="?page={{ apartments.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}"{% else %}href="#"{% endif %}>previous</a></li>
+                        {% for i in apartments.paginator.page_range %}
+                            {% if i == apartments.number %}
+                                <li class='page-item'><a style="color:red;" class='page-link' href="?page={{i}}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">{{i}}</a></li>
+                            {% else %}
+                                <li class='page-item'><a class='page-link' href="?page={{i}}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">{{i}}</a></li>
+                            {% endif %}
+                        {% endfor %}                       
+                        <li class='page-item'><a class='page-link' {% if apartments.has_next %}href="?page={{ apartments.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}"{% else %}href="#"{% endif %}>next</a></li>
+                    </ul>
+                </nav>
+            </div>
             {% else %}
             <div>Нічого не знайдено</div>
             {% endif %}
             <div class="col-12 space"></div>
-            <div class="pagination col-12">
-                <nav aria-label="Page navigation example">
-                    <ul class="step-links pagination">
-                        <li class='page-item'><a class='page-link' {% if apartments.has_previous %}href="?page={{ apartments.previous_page_number }}"{% else %}href="#"{% endif %}>previous</a></li>
-                        {% for i in apartments.paginator.page_range %}
-                        {% if i == apartments.number %}
-                        <li class='page-item'><a style="color:red;" class='page-link' href="?page={{i}}">{{i}}</a></li>
-                        {% else %}
-                        <li class='page-item'><a class='page-link' href="?page={{i}}">{{i}}</a></li>
-                        {% endif %}
-                        {% endfor %}                       
-                        <li class='page-item'><a class='page-link' {% if apartments.has_next %}href="?page={{ apartments.next_page_number }}"{% else %}href="#"{% endif %}>next</a></li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </div>  
 </section>
